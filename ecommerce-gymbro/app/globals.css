@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body, * {
   padding: 0;
@@ -7,6 +11,12 @@ body, * {
 }
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -64,6 +74,7 @@ width: 100%;
 }
 .logo{
   width: 100px;
+  font-size: 50px;
 }
 .cart-icon{
   font-size: 30px;
@@ -80,6 +91,7 @@ width: 100%;
 .cart-item-qty{
   position: absolute;
   right: -8px;
+  top: 30px;
   font-size: 12px;
   color: #eee;
   background-color: #f02d34;
