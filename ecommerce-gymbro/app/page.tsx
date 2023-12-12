@@ -18,7 +18,7 @@ const page  = async () => {
 
   return (
     <>
-      <div className='mb-[100px] flex-center w-full'>
+      <div className='mb-[100px] mt-[30px] flex-center w-full'>
         <Image src={banner} alt='banner' className='w-full' />
       </div>
 

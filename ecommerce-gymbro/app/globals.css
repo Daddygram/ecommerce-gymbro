@@ -40,9 +40,9 @@ width: 100%;
 }
 
 .navbar-container{
+  width: 100vw;
   display: flex;
   justify-content: space-between;
-  margin: 6px 18px;
   position: relative;
 }
 .marquee-text{
@@ -503,71 +503,32 @@ margin-top: 160px;
 .product-max-qty{
   margin-top: 10px;
 }
+.animated {
+  transition: 0.3s ease;
+}
+.animated:first-child {
+  animation: anim 12s infinite;
+}
+
+@keyframes anim {
+  0% {
+    margin-top: 0px;
+  }
+  25% {
+    margin-top: -40px;
+  }
+  50% {
+    margin-top: -80px;
+  }
+  75% {
+    margin-top: -40px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
 
 @media screen and (max-width:800px) {
-  .hero-banner-container{
-    height: 560px;
-  }
-  .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
-  }
-  .footer-banner-container{
-    height: 560px;
-    margin-top: 80px;
-  }
-  .footer-banner-image{
-    width: 77%;
-    left: 30%;
-    top: 6%;
-    height: 56%
-  }
-  .banner-desc .left h3{
-    font-weight: 900;
-    font-size: 50px;
-    margin-left: 5px;
-  }
-  .banner-desc .left p{
-    margin:18px;
-  }
-  .banner-desc .right h3{
-    font-size: 45px;
-  }
-  .banner-desc .right p{
-    font-size: 18px;
-  }
-  .banner-desc .right .company-desc{
-    font-size: 14px;
-  }
-  .banner-desc{
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .hero-banner-container{
-    line-height: 1.3;
-  }
-  .hero-banner-container h1{
-    font-size: 50px;
-  }
- .hero-banner-container h3{
-    font-size: 40px;
-  }
-  .hero-banner-container button{
-    margin-top: 90px;
-    z-index: 10000;
-  }
-  .desc{
-   bottom: 60px;
-  }
-  .product-detail-container{
-    flex-wrap: wrap;
-    }
-  .product-detail-container .product-detail-image{
-    width: 350px;
-    height: 350px;
-  }
   .cart-container{
     width: 415px;
   padding: 4px;
@@ -602,9 +563,7 @@ margin-top: 160px;
 
 
 }
-.item-desc .bottom{
-  margin-top: 30px;
-}
+
 .cart-bottom{
   padding: 30px;
 }
