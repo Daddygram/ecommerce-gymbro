@@ -20,9 +20,7 @@ interface ProductProps {
 }
 
 const Product: React.FC<ProductProps> = ({ product: { image, name, slug, price } }) => {
-  console.log('Slug:', slug.current);
 
-  
   return (
     <div>
       <Link href={`/product/${slug.current}`}>

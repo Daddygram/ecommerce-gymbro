@@ -96,7 +96,7 @@ width: 100%;
 .cart-item-qty{
   position: absolute;
   right: -8px;
-  top: 30px;
+  top: -5px;
   font-size: 12px;
   color: #eee;
   background-color: #f02d34;
@@ -306,7 +306,6 @@ padding: 30px 65px;
  margin: 40px;
  margin-top: 60px;
  color: #324d67;
-
 }
 
 .product-detail-image{
@@ -321,18 +320,6 @@ padding: 30px 65px;
 .product-detail-image:hover{
   background-color: #f02d34;
 
-}
-.small-images-container{
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-.small-image{
-  border-radius: 8px;
-  background-color: #ebebeb;
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
 }
 
 .selected-image{
@@ -385,8 +372,8 @@ padding: 30px 65px;
   background-color: white;
   color: #f02d34;
   cursor: pointer;
-  width: 200px;
-   transform: scale(1, 1);
+  width: 250px;
+  transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
 .buttons .add-to-cart:hover{
