@@ -1,18 +1,34 @@
-import Layout from '@/components/Layout';
-
 import { AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai';
 
 import { client } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
 import { error } from 'console';
-import { GetStaticProps } from 'next';
 
-const ProductPage = ({ product }:any) => {
+interface ProductQuery {
+  slug: {
+    current:string
+  };
+}
 
+interface queryProps {
+  params: {
+    slug: {
+      current: string;
+    };
+  }
+}
+
+
+const ProductPage = async ({params}:queryProps) => {
+  const { product, notFound } = await getProps({ params });
+
+  if (notFound) {
+    return <div>Product not found</div>;
+  }
   const { image, name, details, price } = product;
   
   return (
-    <Layout><div>
+    <div>
     <div className="product-detail-container">
       <div>
         <div className="flex-center w-[400px]">
@@ -39,9 +55,10 @@ const ProductPage = ({ product }:any) => {
         </div>
       </div>
     </div>
-  </div></Layout>
+  </div>
   )
 }
+
 
 export const getStaticPaths = async () => {
   const query = `*[_type == "product"] {
@@ -53,7 +70,7 @@ export const getStaticPaths = async () => {
 
   const products = await client.fetch(query);
 
-  const paths = products.map((product: { slug: { current: any; }; }) => ({
+  const paths = products.map((product:ProductQuery) => ({
     params: { 
       slug: product.slug.current
     }
@@ -61,13 +78,13 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking'
+    fallback: 'blocking' 
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getProps = async ({ params }: queryProps) => {
   if (!params || !params.slug) {
-    console.log(error)
+    console.log(error);
     return {
       notFound: true,
     };
@@ -76,14 +93,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params;
 
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  const productsQuery = '*[_type == "product"]';
-  
-  const product = await client.fetch(query);
-  const products = await client.fetch(productsQuery)
 
-  return {
-    props: { product, products },
-  }; 
+  const product = await client.fetch(query);
+
+  return { product };
 };
 
 export default ProductPage
