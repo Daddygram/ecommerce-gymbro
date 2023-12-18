@@ -38,20 +38,11 @@ const ProductPage = async ({params}:queryProps) => {
 
       <div className="product-detail-desc">
         <h1 className='text-[3em]'>{name}</h1>
-        <h4>დეტალები: </h4>
+        <h4 className='text-lg font-semibold'>დეტალები: </h4>
         <p>{details}</p>
         <p className="price">${price}</p>
-        <div className="quantity">
-          <h3 className=' text-[2em]'>რაოდენობა:</h3>
-          <p className="quantity-desc flex-center">
-            <span className="minus"><AiOutlineMinus /></span>
-            <span className="num">0</span>
-            <span className="plus"><AiOutlinePlus /></span>
-          </p>
-        </div>
         <div className="buttons">
-          <button type="button" className="add-to-cart" >კალათაში დამატება</button>
-          <button type="button" className="buy-now">ყიდვა</button>
+          <a href="https://www.facebook.com/profile.php?id=100092759055862" target='_blank'><button type="button" className="buy-now">ყიდვა</button></a>
         </div>
       </div>
     </div>
