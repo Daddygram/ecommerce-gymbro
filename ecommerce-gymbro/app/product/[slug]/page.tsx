@@ -40,7 +40,7 @@ const ProductPage = async ({params}:queryProps) => {
         <h1 className='text-[3em]'>{name}</h1>
         <h4 className='text-lg font-semibold'>დეტალები: </h4>
         <p>{details}</p>
-        <p className="price">${price}</p>
+        <p className="price">₾{price}</p>
         <div className="buttons">
           <a href="https://www.facebook.com/profile.php?id=100092759055862" target='_blank'><button type="button" className="buy-now">ყიდვა</button></a>
         </div>
