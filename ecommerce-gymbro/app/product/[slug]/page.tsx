@@ -50,6 +50,8 @@ const ProductPage = async ({params}:queryProps) => {
   )
 }
 
+export default ProductPage
+
 
 export const getStaticPaths = async () => {
   const query = `*[_type == "product"] {
@@ -89,5 +91,3 @@ export const getProps = async ({ params }: queryProps) => {
 
   return { product };
 };
-
-export default ProductPage
