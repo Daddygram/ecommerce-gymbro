@@ -1,8 +1,7 @@
 import { AiOutlineMinus, AiOutlinePlus} from 'react-icons/ai';
 
-import { client } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
-import { error } from 'console';
+import { getProps } from '@/utils/utilities';
 
 interface ProductQuery {
   slug: {
@@ -53,41 +52,3 @@ const ProductPage = async ({params}:queryProps) => {
 export default ProductPage
 
 
-export const getStaticPaths = async () => {
-  const query = `*[_type == "product"] {
-    slug {
-      current
-    }
-  }
-  `;
-
-  const products = await client.fetch(query);
-
-  const paths = products.map((product:ProductQuery) => ({
-    params: { 
-      slug: product.slug.current
-    }
-  }));
-
-  return {
-    paths,
-    fallback: 'blocking' 
-  }
-}
-
-export const getProps = async ({ params }: queryProps) => {
-  if (!params || !params.slug) {
-    console.log(error);
-    return {
-      notFound: true,
-    };
-  }
-
-  const { slug } = params;
-
-  const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-
-  const product = await client.fetch(query);
-
-  return { product };
-};
