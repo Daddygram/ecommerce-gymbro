@@ -31,7 +31,7 @@ const ProductPage = async ({params}:queryProps) => {
     <div>
     <div className="product-detail-container">
       <div>
-        <div className="flex-center w-[400px]">
+        <div className="image-container">
           <img src={urlForImage(image && image[0])} className="product-detail-image" loading="lazy" />
         </div>
       </div>

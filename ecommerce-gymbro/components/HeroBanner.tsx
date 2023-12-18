@@ -19,11 +19,9 @@ interface bannerProps {
 
 const HeroBanner:React.FC<bannerProps> = ({banners: {image, slug}}) => {
   return (
-    <div className='hero-banner-container flex-center w-[calc(100%/3-20px)]'>
-      <div>
-        <img src={urlForImage(image && image[0])} alt="" 
-        className='cursor-pointer'/>
-      </div>
+    <div className='hero-banner-container flex-center w-[440px]'>
+      <img src={urlForImage(image && image[0])} alt="" 
+      className='cursor-pointer'/>
     </div>
   )
 }

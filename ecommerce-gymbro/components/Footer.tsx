@@ -9,24 +9,24 @@ const Footer = () => {
     <div className='mt-[100px]'>
       <div className='flex-center'>
         <div className='flex-center bg-[#ebebeb] w-[100vw]'>
-          <div className='flex-center gap-10 p-10 w-full ml-[100px] mr-[100px]'>
-            <div className='flex-1 flex-center flex-col bg-white p-4'>
+          <div className='credentials flex-center gap-10 p-10 w-full ml-[100px] mr-[100px]'>
+            <div className='credential flex-1 flex-center flex-col bg-white p-4 text-center'>
               <p className='m-auto pl-6 logo'><RiSecurePaymentFill /></p>
               <p className='text-lg font-bold pt-5'>100%-ით უსაფრთხო გადახდა</p>
             </div>
-            <div className='flex-1 flex-center flex-col bg-white p-4'>
+            <div className='credential flex-1 flex-center flex-col bg-white p-4 text-center'>
               <p className='m-auto pl-6 logo'><IoIosAlbums /></p>
               <p className='text-lg font-bold pt-5'>100%-ით ავთენტური პროდუქი</p>
             </div>
-            <div className='flex-1 flex-center flex-col bg-white p-4'>
+            <div className='credential flex-1 flex-center flex-col bg-white p-4 text-center'>
               <p className='m-auto pl-6 logo'><MdLocalShipping /></p>
               <p className='text-lg font-bold pt-5'>სწრაფი მიტანის სერვისი</p>
             </div>
           </div>
         </div>
       </div>
-      <div className='flex-between bg-black p-10'>
-        <ul className="flex justify-center space-x-5 ml-14">
+      <div className='flex-between flex-wrap bg-black p-10'>
+        <ul className="flex justify-center space-x-5 w-full">
           <li>
               <a href="#" className="text-[#c6c6c6] hover:text-white">
                   <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -46,7 +46,7 @@ const Footer = () => {
               </a>
           </li>
         </ul>
-        <div>
+        <div className='w-full mt-3'>
           <p className='text-slate-100'>&copy; 2023 Gymbro. All Rights Reserved.</p>
         </div>
       </div>

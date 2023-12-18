@@ -11,7 +11,7 @@ const TopNav = () => {
                 <li className="flex-center gap-2"><FaCreditCard /> ადგილზე გადახდა</li>
                 <li className="flex-center gap-2"><FaTruck /> უფასო მიტანის სერვისი</li>
             </ul>
-            <div className='flex-center h-[40px]'>
+            <div className='flex-center h-[40px] mr-3'>
                 <span>GEO</span>
             </div>
         </div>
