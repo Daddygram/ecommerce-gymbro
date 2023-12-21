@@ -12,7 +12,7 @@ const TopNav = () => {
                 <li className="flex-center gap-2"><FaTruck /> უფასო მიტანის სერვისი</li>
             </ul>
             <div className='flex-center h-[40px] mr-3'>
-                <span>GEO</span>
+                <span className="hide">GEO</span>
             </div>
         </div>
     </div>

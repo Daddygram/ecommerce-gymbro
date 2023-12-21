@@ -36,7 +36,7 @@ const ProductPage = async ({params}:queryProps) => {
       </div>
 
       <div className="product-detail-desc">
-        <h1 className='text-[3em]'>{name}</h1>
+        <h1 className='detail-h1 text-[2.5em]'>{name}</h1>
         <h4 className='text-lg font-semibold'>დეტალები: </h4>
         <p>{details}</p>
         <p className="price">₾{price}</p>
